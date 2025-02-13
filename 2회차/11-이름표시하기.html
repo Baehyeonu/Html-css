@@ -1,0 +1,36 @@
+<!-- 링크란 현재 문서에서 다른 문서로 이동할 수 있느 수단
+a태그 요소는 다른 페이지 전화번호이메일 주소 등 다양한 유형의 콘텐트로 연결되는 링크(연결)
+역할을 한다. 이때 href 특성이 필요하다.
+a태그에 target 특성을 추가하면 새로운 문서를 열 때 현재 탭에서 열지.
+새로운 탭에서 열지 결정할 수 있다. -->
+
+<!DOCTYPE html> 
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>링크 표시하기</title>
+    </head>
+    <body>
+        <a href="https://www.naver.com"
+        target="_self"
+        >
+        네이버로 가볼게요!
+    </a>
+
+    <hr>
+
+        <a href="https://www.naver.com"
+        target="_blank"
+        >
+        네이버로 가볼게요!
+    </a>
+
+    <hr>
+
+    <a target="_blank"
+    href="../Mini Project프로필 페이지 만들기.html"
+    >
+        내가 만든 프로필 페이지로 이동할께요!
+    </a>
+    </body>
+</html>
