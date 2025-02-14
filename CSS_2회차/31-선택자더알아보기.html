@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <title>선택자 더 알아보기</title>
+    <style>
+        /* 
+        기호와 함꼐 사용하는 속성 선택자
+        * : 값의 포함 여부
+        ^ : 값의 시작 여부
+        $ : 값의 끝 여부
+        */
+        [width $= "0"]{
+            border: 5px dashed red;
+        }
+
+        p > em{
+            color: blue;
+        }
+        /* 형제 선택자는 뒤이어 등장하는 형제들을 대상으로 한다!*/
+        #sam ~ p{
+            color: orange;
+
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <img src="../1회차/images/aws.png" width="120" alt="aws">
+    <img src="../1회차/images/aws.png" width="120">
+    <img src="../1회차/images/aws.png" width="120" id="sam">
+    <p>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+    <p>반값습니다반값습니다반값습니다반값습니다반값습니다</p>
+    <p>안녕히가세요안녕히가세요<em>안녕히가세요안녕히가세요</em></p>
+    <p>다음에 다시 만나요다음에 다시 만나요다음에 다시 만나요</p>
+</body>
+</html>
