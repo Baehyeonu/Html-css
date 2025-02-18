@@ -27,12 +27,12 @@
     <div class="container mt-3">
         <h3 class="mt-5 mb-3">신규 등록 상품</h3>
         <script>
-            // 테마 변경 함수
+// 테마 변경 함수
             function setTheme(theme) {
                 document.body.setAttribute('data-bs-theme', theme);
             }
 
-            // 현재 시간 표시 함수
+// 현재 시간 표시 함수
             function updateTime() {
                 const now = new Date();
                 const options = {
@@ -47,7 +47,7 @@
                 document.getElementById('current-time').textContent = now.toLocaleString('ko-KR', options);
             }
 
-            // 1초마다 시간 업데이트
+// 1초마다 시간 업데이트
             setInterval(updateTime, 1000);
             updateTime(); // 초기 로드 시 시간 표시
         </script>
@@ -67,7 +67,7 @@
             </div>
 
             <div class="col-md-3">
-                <!-- 성별 선택 -->
+<!-- 성별 선택 -->
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="male" value="male">
                     <label class="form-check-label" for="male">남성</label>
@@ -77,16 +77,16 @@
                     <label class="form-check-label" for="female">여성</label>
                 </div>
 
-                <!-- 조회 버튼 코드를 넣어주세요 -->
+<!-- 조회 버튼 코드를 넣어주세요 -->
                 <button onclick="window.location.reload()" type="button" class="btn btn-primary">조회</button>
             </div>
-            <!-- 회원 가입 버튼 -->
+<!-- 회원 가입 버튼 -->
             <div class="col-md-3 d-flex justify-content-end">
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#signupModal">회원
                     가입</button>
             </div>
         </form>
-        <!-- 회원가입 모달 -->
+<!-- 회원가입 폼 -->
         <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -154,6 +154,7 @@
 
 
                         </form>
+<!-- 아이디, 비밀번호 등 유효성검사를 할 수 있는 코드를 추가 -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" onclick="submitSignupForm()">가입하기</button>
@@ -194,7 +195,7 @@
                             let isValid = true;
                             let errorMessage = '';
                         
-                            // 아이디 유효성 검사
+// 아이디 유효성 검사
                             if (username.length < 5 || username.length > 16) {
                                 errorMessage += '아이디는 5~16자 사이여야 합니다.\n';
                                 isValid = false;
@@ -204,7 +205,7 @@
                                 isValid = false;
                             }
                         
-                            // 비밀번호 유효성 검사
+// 비밀번호 유효성 검사
                             if (password.length < 8 || password.length > 20) {
                                 errorMessage += '비밀번호는 8~20자 사이여야 합니다.\n';
                                 isValid = false;
@@ -214,13 +215,13 @@
                                 isValid = false;
                             }
                         
-                            // 비밀번호 확인
+// 비밀번호 확인
                             if (password !== confirmPassword) {
                                 errorMessage += '비밀번호가 일치하지 않습니다.\n';
                                 isValid = false;
                             }
                         
-                            // 이메일 유효성 검사
+// 이메일 유효성 검사
                             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                                 errorMessage += '올바른 이메일 주소를 입력해주세요.\n';
                                 isValid = false;
@@ -243,7 +244,7 @@
         <div class="container mt-3">
             <table class="table table-sm">
                 <thead class="table-group-divider">
-                    <!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
+<!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
                     <th scope="col">카테고리</th>
                     <th scope="col">브랜드</th>
                     <th scope="col">상품명</th>
@@ -252,12 +253,12 @@
                 </thead>
 
                 <tbody id="product_data_Table" class="table-group-divider">
-                    <!-- tbody요소의 id="product_data_Table" 는 지우거나 변경하면 안돼요! -->
-                    <!-- 제품 데이터가 여기 추가됩니다. -->
+<!-- tbody요소의 id="product_data_Table" 는 지우거나 변경하면 안돼요! -->
+<!-- 제품 데이터가 여기 추가됩니다. -->
                 </tbody>
             </table>
         </div>
-        <!-- 페이지 네이션 코드를 넣어주세요 -->
+<!-- 페이지 네이션 코드를 넣어주세요 -->
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <li class="page-item disabled">
@@ -274,10 +275,10 @@
     </div>
 
     <script>
-        // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
-        // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리를 작성해 볼 수 있음
+// 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+// 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리를 작성해 볼 수 있음
 
-        // 제품 데이터
+// 제품 데이터
         const product_data = [
             { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
             { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
@@ -286,10 +287,10 @@
             // ...
         ];
 
-        // 제품 테이블에 데이터 추가
+// 제품 테이블에 데이터 추가
         const product_data_Table = document.getElementById('product_data_Table');
 
-        // 초기 데이터 로딩
+// 초기 데이터 로딩
         product_data.forEach((item) => {
             const row = product_data_Table.insertRow();
             row.insertCell(0).innerHTML = item.category;
